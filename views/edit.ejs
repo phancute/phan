@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form 
+        action="/update/<%= product.id %>"
+        method="POST" 
+        enctype="multipart/form-data"
+    >
+        <div>
+            <label for="">Name</label>
+            <input type="text" name="name" value="<%= product.name %>">
+        </div>
+        <div>
+            <label for="">Price</label>
+            <input type="number" name="price" value="<%= product.price %>">
+        </div>
+        <div>
+            <label for="">Description</label>
+            <input type="text" name="description" value="<%= product.description %>">
+        </div>
+        <div>
+            <label for="">Image</label>
+            <input type="file" name="img">
+            <% if (product.img) { %>
+                <img src="/upload/<%=product.img%>" alt="">
+            <% } %>
+        </div>
+        <input type="submit" value="Sửa">
+    </form>
+</body>
+</html>

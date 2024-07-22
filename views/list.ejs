@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach((p) => { %>
+                <tr>
+                    <td><%= p.id %></td>
+                    <td><%= p.name %></td>
+                    <td><%= p.price %></td>
+                    <td><%= p.description %></td>
+                    <td><img src="/upload/<%= p.img %>" alt=""></td>
+                    <td>
+                        <a href="/edit/<%= p.id %>">edit</a>
+                        <a href="">delete</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
